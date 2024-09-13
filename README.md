@@ -14,6 +14,7 @@ Simple application of vehicle washing service system
 - Database configuration in .env
 - Run the command in the terminal "php artisan migrate"
 - Run the command in the terminal "php artisan db:seed"
+- Check .\database\seeders\UsersTableSeeder.php for username and password admin
 - Enjoy!
 
 ## Made with Laravel
