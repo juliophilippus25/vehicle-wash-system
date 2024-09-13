@@ -21,7 +21,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $vType->name }}</td>
-                            <td>{{ $vType->price }}</td>
+                            <td>{{ formatIDR($vType->price) }}</td>
                         </tr>
                     @empty
                         <tr class="">
