@@ -11,3 +11,4 @@ Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/vehicle-types', [App\Http\Controllers\VehicleTypeController::class, 'index'])->name('vehicleType.index');
+Route::get('/customers', [App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
