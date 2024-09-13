@@ -11,4 +11,13 @@ Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/vehicle-types', [App\Http\Controllers\VehicleTypeController::class, 'index'])->name('vehicleType.index');
-Route::get('/customers', [App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
+
+// Routing customers
+Route::group(['prefix' => '/customers'], function() {
+    Route::get('', [App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
+    Route::get('/create', [App\Http\Controllers\CustomerController::class, 'create'])->name('customers.create');
+    Route::post('/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('customers.store');
+    Route::get('/edit/{id}', [App\Http\Controllers\CustomerController::class, 'edit'])->name('customers.edit');
+    Route::put('/update/{id}', [App\Http\Controllers\CustomerController::class, 'update'])->name('customers.update');
+    Route::delete('/delete/{id}', [App\Http\Controllers\CustomerController::class, 'delete'])->name('customers.delete');
+});

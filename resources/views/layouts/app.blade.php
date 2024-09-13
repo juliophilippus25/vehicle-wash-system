@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ env('APP_NAME') }} | @yield('title')</title>
-    <link rel="shortcut icon" type="image/png" href="modernize/assets/images/logos/favicon.png" />
-    <link rel="stylesheet" href="modernize/assets/css/styles.min.css" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('modernize/assets/images/logos/favicon.png') }}" />
+    <link rel="stylesheet" href="{{ asset('modernize/assets/css/styles.min.css') }}" />
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.bootstrap5.min.css"> --}}
 </head>
 
@@ -74,11 +74,11 @@
         </div>
     </div>
 
-    <script src="modernize/assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="modernize/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="modernize/assets/js/sidebarmenu.js"></script>
-    <script src="modernize/assets/js/app.min.js"></script>
-    <script src="modernize/assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="{{ asset('modernize/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('modernize/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('modernize/assets/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('modernize/assets/js/app.min.js') }}"></script>
+    <script src="{{ asset('modernize/assets/libs/simplebar/dist/simplebar.js') }}"></script>
     {{-- <script src="https://cdn.datatables.net/2.1.3/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bootstrap5.min.js"></script> --}}
     @yield('script')
