@@ -39,7 +39,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    {{ Auth::user()->name }}
+                                    <i class="ti ti-user"></i>&nbsp;{{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                     aria-labelledby="drop2">

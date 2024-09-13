@@ -13,12 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // jalankan dengan php artisan db:seed maka seeder dari tiap kelas dibawah akan dieksekusi
         $this->call(UsersTableSeeder::class);
+        $this->call(VehicleTypeSeeder::class);
     }
 }
