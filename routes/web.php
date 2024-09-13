@@ -21,3 +21,9 @@ Route::group(['prefix' => '/customers'], function() {
     Route::put('/update/{id}', [App\Http\Controllers\CustomerController::class, 'update'])->name('customers.update');
     Route::delete('/delete/{id}', [App\Http\Controllers\CustomerController::class, 'delete'])->name('customers.delete');
 });
+
+// Routing transactions
+Route::group(['prefix' => '/transactions'], function() {
+    Route::get('', [App\Http\Controllers\TransactionController::class, 'index'])->name('transactions.index');
+    Route::get('/create', [App\Http\Controllers\TransactionController::class, 'create'])->name('transactions.create');
+});

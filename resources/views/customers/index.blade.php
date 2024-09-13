@@ -45,7 +45,7 @@
                         <tr class="">
                             <td colspan="16">
                                 <strong class="text-dark">
-                                    <center>No available data.</center>
+                                    <center>No data available.</center>
                                 </strong>
                             </td>
                         </tr>

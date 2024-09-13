@@ -10,4 +10,9 @@ class VehicleType extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'price'];
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'vehicle_type_id');
+    }
 }
