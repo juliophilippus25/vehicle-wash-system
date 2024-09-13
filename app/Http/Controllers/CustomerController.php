@@ -15,7 +15,8 @@ class CustomerController extends Controller
 
     // Fungsi ini untuk memanggil view index atau halaman utama untuk melihat data customer
     public function index() {
-        // Kode program di bawah untuk mengambil data customer yang baru ditambahkan
+        // Membuat variabel $customer untuk menampilkan data dari tabel customer dengan method get()
+        // method orderBy() digunakan untuk mengurutkan data berdasarkan baru ditambah
         $customers = Customer::orderBy('created_at', 'desc')->get();
 
         // Kode program dibawah untuk memanggil view index yang dimana dalam folder customer terdapat file index
@@ -25,6 +26,7 @@ class CustomerController extends Controller
 
     // Fungsi ini untuk memanggil view create yang digunakan untuk menambahkan customer
     public function create() {
+        // Kode program dibawah untuk memanggil view create yang dimana dalam folder customer terdapat file create.blade.php
         return view('customers.create');
     }
 
@@ -59,10 +61,15 @@ class CustomerController extends Controller
 
     // Fungsi ini untuk memanggil view edit yang digunakan untuk mengubah data customer dan diambil berdasarkan id customer
     public function edit($id) {
+        // Membuat variabel $customer mengambil data tertentu dengan method find($id) yang akan diambil sesuai dengan id yang dicari
         $customer = Customer::find($id);
+
+        // Kode program dibawah untuk memanggil view edit yang dimana dalam folder customer terdapat file edit.blade.php
+        // dan compact untuk mengembalikan data atau variabel yang dapat digunakan dalam view
         return view('customers.edit', compact('customer'));
     }
 
+    // Fungsi ini untuk mengubah data customer
     public function update(Request $request, $id) {
         // Mengambil data customer sesuai dengan kolom id
         $customer = Customer::find($id);
@@ -97,7 +104,7 @@ class CustomerController extends Controller
         // Mengambil data customer sesuai dengan kolom id
         $customer = Customer::find($id);
 
-        // Untuk menghapus data customer
+        // Untuk menghapus data customer menggunakan method delete()
         $customer->delete();
 
         // Jika berhasil menghapus data maka redirect kembali yaitu ke customer index

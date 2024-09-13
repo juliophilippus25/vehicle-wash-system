@@ -10,7 +10,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-Route::get('/vehicle-types', [App\Http\Controllers\VehicleTypeController::class, 'index'])->name('vehicleType.index');
+
+// Routing vehicle_types
+Route::group(['prefix' => '/vehicle-types'], function() {
+    Route::get('', [App\Http\Controllers\VehicleTypeController::class, 'index'])->name('vehicleType.index');
+});
 
 // Routing customers
 Route::group(['prefix' => '/customers'], function() {
@@ -26,4 +30,5 @@ Route::group(['prefix' => '/customers'], function() {
 Route::group(['prefix' => '/transactions'], function() {
     Route::get('', [App\Http\Controllers\TransactionController::class, 'index'])->name('transactions.index');
     Route::get('/create', [App\Http\Controllers\TransactionController::class, 'create'])->name('transactions.create');
+    Route::post('/store', [App\Http\Controllers\TransactionController::class, 'store'])->name('transactions.store');
 });

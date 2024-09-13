@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Vehicle Types')
+@section('title', 'Transactions')
 
 @section('content')
     <div class="card shadow mt-3">
@@ -13,21 +13,28 @@
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
-                        <th class="col-md-4">Transaction Code</th>
+                        <th class="col-md-3">Transaction Code</th>
                         <th class="col-md-4">Customer Name</th>
+                        <th class="col-md-3">Vehicle Type</th>
                         <th class="col-md-2">Price</th>
-                        <th class="col-md-2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($transactions as $transaction)
                         <tr>
                             <td>{{ $transaction->transaction_code }}</td>
-                            <td>{{ $transaction->customer->name }}</td>
-                            <td>{{ formatIDR($transaction->vehicle_type->price) }}</td>
+                            <td>{{ $transaction->customer->name }} / {{ $transaction->customer->phone }}</td>
+                            <td>{{ $transaction->vehicle_type->name }}</td>
+                            <td>
+                                @if ($transaction->price == 0)
+                                    Free
+                                @else
+                                    {{ formatIDR($transaction->price) }}
+                                @endif
+                            </td>
                         </tr>
                     @empty
-                        <tr class="">
+                        <tr>
                             <td colspan="16">
                                 <strong class="text-dark">
                                     <center>No data available.</center>

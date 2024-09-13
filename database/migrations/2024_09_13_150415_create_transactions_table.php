@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('transaction_code', 12)->primary()->unique();
             $table->foreignId('vehicle_type_id')->constrained('vehicle_types')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->decimal('price', 10, 0);
             $table->timestamps();
         });
     }

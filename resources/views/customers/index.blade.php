@@ -14,7 +14,7 @@
                 <thead>
                     <tr>
                         <th class="col-md-2">No</th>
-                        <th class="col-md-3">Name</th>
+                        <th class="col-md-3">Customer Name</th>
                         <th class="col-md-2">Phone</th>
                         <th class="col-md-3 text-center">Action</th>
                     </tr>

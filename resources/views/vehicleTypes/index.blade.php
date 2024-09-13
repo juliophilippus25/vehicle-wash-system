@@ -12,7 +12,7 @@
                 <thead>
                     <tr>
                         <th class="col-md-2">No</th>
-                        <th class="col-md-5">Name</th>
+                        <th class="col-md-5">Vehicle Type</th>
                         <th class="col-md-5">Price</th>
                     </tr>
                 </thead>

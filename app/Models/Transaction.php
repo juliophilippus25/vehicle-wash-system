@@ -16,14 +16,19 @@ class Transaction extends Model
     protected $fillable = [
         'transaction_code',
         'vehicle_type_id',
-        'customer_id'
+        'customer_id',
+        'price'
     ];
 
+    // Digunakan untuk mendefinisikan relasi tabel
+    // Cara baca kode program dibawah ini adalah satu transaksi dapat memiliki satu tipe kendaraan
     public function vehicle_type()
     {
         return $this->belongsTo(VehicleType::class, 'vehicle_type_id');
     }
 
+    // Digunakan untuk mendefinisikan relasi tabel
+    // Cara baca kode program dibawah ini adalah satu transaksi dapat memiliki satu customer
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id');
