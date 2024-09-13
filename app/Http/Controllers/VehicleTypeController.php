@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\VehicleType;
 use Illuminate\Http\Request;
 
 class VehicleTypeController extends Controller
@@ -12,6 +13,7 @@ class VehicleTypeController extends Controller
     }
 
     public function index () {
-        return view('vehicletypes.index');
+        $vTypes = VehicleType::get();
+        return view('vehicletypes.index', compact('vTypes'));
     }
 }

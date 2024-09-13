@@ -8,7 +8,7 @@
     <title>{{ env('APP_NAME') }} | @yield('title')</title>
     <link rel="shortcut icon" type="image/png" href="modernize/assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="modernize/assets/css/styles.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.bootstrap5.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.bootstrap5.min.css"> --}}
 </head>
 
 <body class="bg-primary-subtle">
@@ -79,8 +79,8 @@
     <script src="modernize/assets/js/sidebarmenu.js"></script>
     <script src="modernize/assets/js/app.min.js"></script>
     <script src="modernize/assets/libs/simplebar/dist/simplebar.js"></script>
-    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bootstrap5.min.js"></script>
+    {{-- <script src="https://cdn.datatables.net/2.1.3/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bootstrap5.min.js"></script> --}}
     @yield('script')
 </body>
 
