@@ -44,10 +44,6 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                     aria-labelledby="drop2">
                                     <div class="message-body">
-                                        <a href="#" class="d-flex align-items-center gap-2 dropdown-item">
-                                            <i class="ti ti-user fs-6"></i>
-                                            <p class="mb-0 fs-3">My Profile</p>
-                                        </a>
                                         <a class="btn btn-outline-primary mx-3 mt-2 d-block"
                                             href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -79,8 +75,6 @@
     <script src="{{ asset('modernize/assets/js/sidebarmenu.js') }}"></script>
     <script src="{{ asset('modernize/assets/js/app.min.js') }}"></script>
     <script src="{{ asset('modernize/assets/libs/simplebar/dist/simplebar.js') }}"></script>
-    {{-- <script src="https://cdn.datatables.net/2.1.3/js/dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bootstrap5.min.js"></script> --}}
     @yield('script')
 </body>
 
