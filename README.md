@@ -1,22 +1,30 @@
+# Vehicle Washing Service System
+
 ## About Application
 
-Simple application of vehicle washing service system
+This is a simple application for managing a vehicle washing service.
 
 ## Features
 
-- Dashboard
-- Vehicle Types
-- Customers
-- Transactions
+- **Dashboard**: Overview of the service metrics and statistics.
+- **Vehicle Types**: Manage different types of vehicles serviced.
+- **Customers**: Manage customer information and details.
+- **Transactions**: Record and manage service transactions.
 
 ## How to install
 
-- Database configuration in .env
-- Run the command in the terminal "php artisan migrate"
-- Run the command in the terminal "php artisan db:seed"
+- Clone the repository
+- Run the command in the terminal "composer install" for install dependencies
+- Run the command in the terimal "php artisan key:generate" for generate application key
+- Copy .env.example to .env and update with your database configuration
+- Run the command in the terminal "php artisan migrate" (Make sure you have created your own database)
+- Run the command in the terminal "php artisan db:seed" 
 - Run the command in the terminal "php artisan serve"
-- Check .\database\seeders\UsersTableSeeder.php for username and password admin
+- Check database\seeders\UsersTableSeeder.php for the default admin username and password.
 - Enjoy!
+
+## Access Application
+- Start your local server using XAMPP, Laragon, or another environment, and open your browser at the URL provided by "php artisan serve" output.
 
 ## Made with Laravel
 
