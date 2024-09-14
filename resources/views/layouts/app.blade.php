@@ -75,6 +75,8 @@
     <script src="{{ asset('modernize/assets/js/sidebarmenu.js') }}"></script>
     <script src="{{ asset('modernize/assets/js/app.min.js') }}"></script>
     <script src="{{ asset('modernize/assets/libs/simplebar/dist/simplebar.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     @yield('script')
 </body>
 

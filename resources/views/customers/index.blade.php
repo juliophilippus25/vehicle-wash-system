@@ -30,15 +30,48 @@
                                     data-original-title="Edit" class="btn btn-warning btn-sm" title="Edit">
                                     <i class="ti ti-edit"></i>
                                 </a>
-                                <form action="{{ route('customers.delete', ['id' => $customer->id]) }}" method="POST"
-                                    style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" data-toggle="tooltip" data-original-title="Delete"
-                                        class="btn btn-danger btn-sm" title="Delete">
-                                        <i class="ti ti-trash"></i>
-                                    </button>
-                                </form>
+                                <button type="button" class="btn btn-danger btn-sm" title="Delete" data-toggle="modal"
+                                    data-target="#modalDelete_{{ $customer->id }}"><i class="ti ti-trash"></i></button>
+
+                                <!-- Modal Delete -->
+                                <div class="modal fade" id="modalDelete_{{ $customer->id }}" tabindex="-1" role="dialog"
+                                    aria-labelledby="modalDeleteLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                {{-- <h5 class="modal-title" id="exampleModalLabel">Peringatan</h5> --}}
+
+                                            </div>
+                                            <form method="POST"
+                                                action="{{ route('customers.delete', ['id' => $customer->id]) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <div class="modal-body">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-alert-circle" width="100"
+                                                        height="100" viewBox="0 0 24 24" stroke-width="1" stroke="#2c3e50"
+                                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                                                        <path d="M12 8v4" />
+                                                        <path d="M12 16h.01" />
+                                                    </svg>
+                                                    <h3 class="mt-6">Are you sure delete
+                                                        <b>{{ $customer->name }}</b>?
+                                                    </h3>
+
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-dismiss="modal">
+                                                        Close</button>
+                                                    <button type="submit" class="btn btn-danger"> Delete</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal Delete -->
                             </td>
                         </tr>
                     @empty
