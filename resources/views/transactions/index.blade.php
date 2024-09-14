@@ -35,7 +35,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="16">
+                            <td colspan="4">
                                 <strong class="text-dark">
                                     <center>No data available.</center>
                                 </strong>
@@ -44,7 +44,7 @@
                     @endforelse
                 </tbody>
             </table>
-
+            {{ $transactions->links('pagination::bootstrap-5') }}
         </div>
     </div>
 @endsection

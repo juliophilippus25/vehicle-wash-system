@@ -19,8 +19,9 @@ class TransactionController extends Controller
     public function index () {
         // Membuat variabel $transactions untuk menampilkan data dari tabel transactions
         // menggunakan method with untuk mengambil data relasi dari tabel lain agar tidak terjadinya N+1 Query
-        // method orderBy() digunakan untuk mengurutkan data berdasarkan baru ditambah
-        $transactions = Transaction::with(['customer', 'vehicle_type'])->orderBy('created_at', 'desc')->get();
+        // method orderBy('created_at', 'desc') digunakan untuk mengurutkan data berdasarkan baru ditambah
+        // method paginate(5) digunakan untuk menampilkan data hanya 5 per halaman
+        $transactions = Transaction::with(['customer', 'vehicle_type'])->orderBy('created_at', 'desc')->paginate(5);
 
         // Kode program dibawah untuk memanggil view index yang dimana dalam folder transactions terdapat file index
         // dan compact untuk mengembalikan data atau variabel yang dapat digunakan dalam view
@@ -119,14 +120,14 @@ class TransactionController extends Controller
         // jika sudah sesuai jumlah transaksi dari customer lebih atau sama dengan 5
         // maka variabel $price akan di set default 0 yang artinya gratis
         if ($transactionCount >= 5) {
-            $price = 0; // Gratis
+            $price = 0; // diskon gratis cuci
         } else {
             // jika tidak maka harganya normal yang diambil dari tabel vehicle_types
             $price = $vehicleType->price; // Harga dari tabel vehicle_types
         }
 
         // Menyimpan data transaction yang diambil dari form transaction_code, customer_id dan vehicle_type_id
-        // data price akan diambil dari logic diatas atau baris 122 atau 125
+        // data price akan diambil dari logic diatas atau baris 123 atau 126
         Transaction::create([
             'transaction_code' => $request->transaction_code,
             'customer_id' => $request->customer_id,
