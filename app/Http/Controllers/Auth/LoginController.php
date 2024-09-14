@@ -25,7 +25,11 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    public function authenticated($user)
+    {
+        toast('You have been logged in successfully.','success')->hideCloseButton()->autoClose(3000);
+        return redirect()->intended(route('dashboard'));
+    }
 
     /**
      * Create a new controller instance.

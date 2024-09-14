@@ -103,6 +103,7 @@ class TransactionController extends Controller
         // Jika pengguna tidak mengikuti aturan dalam memnambahkan customer
         if($validator->fails()){
             // redirect dengan pesan error
+            toast('Something went wrong!','error')->hideCloseButton()->autoClose(3000);
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
@@ -125,7 +126,7 @@ class TransactionController extends Controller
         }
 
         // Menyimpan data transaction yang diambil dari form transaction_code, customer_id dan vehicle_type_id
-        // data price akan diambil dari logic diatas atau baris 121 atau 124
+        // data price akan diambil dari logic diatas atau baris 122 atau 125
         Transaction::create([
             'transaction_code' => $request->transaction_code,
             'customer_id' => $request->customer_id,
@@ -134,6 +135,7 @@ class TransactionController extends Controller
         ]);
 
         // Jika berhasil menyimpan data maka redirect ke transaction index
+        toast('Transaction have been saved.','success')->hideCloseButton()->autoClose(3000);
         return redirect()->route('transactions.index');
     }
 }

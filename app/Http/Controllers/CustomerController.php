@@ -46,6 +46,7 @@ class CustomerController extends Controller
         // Jika pengguna tidak mengikuti aturan dalam memnambahkan customer
         if($validator->fails()){
             // redirect dengan pesan error
+            toast('Something went wrong!','error')->hideCloseButton()->autoClose(3000);
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
@@ -56,6 +57,7 @@ class CustomerController extends Controller
         ]);
 
         // Jika berhasil menyimpan data maka redirect ke customer index
+        toast('Customer have been saved.','success')->hideCloseButton()->autoClose(3000);
         return redirect()->route('customers.index');
     }
 
@@ -88,6 +90,7 @@ class CustomerController extends Controller
          // Jika pengguna tidak mengikuti aturan dalam memnambahkan customer
          if($validator->fails()){
              // redirect dengan pesan error
+             toast('Something went wrong!','error')->hideCloseButton()->autoClose(3000);
              return redirect()->back()->withErrors($validator)->withInput();
          }
  
@@ -97,6 +100,7 @@ class CustomerController extends Controller
          $customer->update();
  
          // Jika berhasil menyimpan data maka redirect ke customer index
+         toast('Customer have been updated.','success')->hideCloseButton()->autoClose(3000);
          return redirect()->route('customers.index');
     }
 
@@ -108,6 +112,7 @@ class CustomerController extends Controller
         $customer->delete();
 
         // Jika berhasil menghapus data maka redirect kembali yaitu ke customer index
+        toast('Customer have been deleted.','success')->hideCloseButton()->autoClose(3000);
         return redirect()->back();
     }
 }
